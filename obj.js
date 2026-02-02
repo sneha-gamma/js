@@ -1,16 +1,16 @@
 
-let obj = {
-    name: 'Sneha',
-    age:21,
-    Khaana: 'dal chawal'
-};
+// let obj = {
+//     name: 'Sneha',
+//     age:21,
+//     Khaana: 'dal chawal'
+// };
 
-console.log(obj['name']);
-console.log(obj.Khaana);
+// console.log(obj['name']);
+// console.log(obj.Khaana);
 
-let aa = 'name';
-console.log(obj[aa]); //sneha
-console.log(obj.aa);  // undefined
+// let aa = 'name';
+// console.log(obj[aa]); //sneha
+// console.log(obj.aa);  // undefined
 
 let user = {
     name: 'Sneha',
@@ -24,9 +24,32 @@ let user = {
     },
 }
 
+
+// let info = {
+//     role: 'software engg',
+//     age: 20,
+//     mode: 'offline'
+// }
+
 // DESTRUCTING
-// let{lat,lng} = user.add.location;
+
+// when name is same as given in obj
+// let {lat,lng} = user.add.location;
 // console.log(lat,lng);
+
+// when we want different name rather than obj
+let {lat: latitude, lng:longitude} = user.add.location;
+console.log(longitude,latitude)
+
+
+// const {name: myname} = user;
+// console.log(myname);
+
+// const {role: myrole,age: myage} = info;
+// console.log(myrole, myage);
+
+
+
 
 // LOOPOING IN OBJECT
 
@@ -56,29 +79,48 @@ let user = {
  // JSON.stringify(obj) -> convert obj into string
  // JSON.parse() -> convert string into obj
 
- let copyobj = JSON.parse(JSON.stringify(user));
- console.log(copyobj);
+//  let copyobj = JSON.parse(JSON.stringify(user));
+//  console.log(copyobj);
 
- copyobj.add.city = 'Indore';
-  console.log(copyobj);
+//  copyobj.add.city = 'Indore';
+//   console.log(copyobj);
 
 
   // OPTIONAL CHAINING -> KI AGR WOH ADAT HO TOH DEDO NA HO TOH ERROR MT DO
 
-  console.log(user?.add?.city);
+//   console.log(user?.add?.city);
 
   // COMPUTED PROPERTY
-  let role = 'software engg';
-  let user2 = {
-    name: 'Sneha',
-    [role]: 'sneha',
-    add:{
-        city:'Bhopal',
-        pin:452002,
-        location:{
-            lat:23.2,
-            lng:77.4,
-        },
-    },
+//   let role = 'software engg';
+//   let user2 = {
+//     name1: 'Sneha',
+//     age: 20,
+//     [role]: 'sneha',
+//     add:{
+//         city:'Bhopal',
+//         pin:452002,
+//         location:{
+//             lat:23.2,
+//             lng:77.4,
+//         },
+//     },
+// }
+// console.log(user2);
+
+
+// OBJECT INSIDE ARRAY
+
+const details = [
+    {name: 'Nick' , age: 25 },
+    {name: 'John', age: 35},
+    {name: 'abc', age: 20}
+];
+
+for(let item of details){
+    console.log(item)
 }
-console.log(user2)
+
+
+
+
+

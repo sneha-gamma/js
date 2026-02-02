@@ -15,6 +15,9 @@ arr.sort(function(a,b){  // SYNTAX OF SORT (FOR DESC->B-A) (FOR AESC->A-B)
     return b-a;
 }) //
 
+arr.fill(9,3) // FILL THE ARRAY WITH THE GIVEN VALUE AND PROVIDE 
+// THE STARTING AND ENDINNG INDEX(OPTIONAL)
+
 console.log(arr);
 
 
@@ -26,10 +29,10 @@ console.log(arr);
 // MAP FILTER REDUCE -> YEH TEENO KUCH RETURN KRTE HAI
 
 // 1) FOR-EACH
-let brr = [10,20,30,40,50];
-brr.forEach(function(val){
-    console.log(val+5)
-})
+// let brr = [10,20,30,40,50];
+// brr.forEach(function(val){
+//     console.log(val+5)
+// })
 
 // 1) MAP -> YEH SIRF TB USE KRNA HAI JB APKO EK NAYA ARRAY BANANA HAIN
 // PICHLE ARRAY KE DATA KE BASIS PE
@@ -47,47 +50,47 @@ brr.forEach(function(val){
 // 2) FILTER -> NEWARR BANATA HE USME HUM RETURN ME TRUE YA FALSE DALTE HE
 // toh sirf cond ke acc value lega baki me undefined nhi show krega
 
-let drr = [11,23,35,440,540];
+// let drr = [11,23,35,440,540];
 
-let newdrr = drr.filter(function(val){
-    if(val>50) return true;                
-})
-console.log(newdrr);
+// let newdrr = drr.filter(function(val){
+//     if(val>50) return true;                
+// })
+// console.log(newdrr);
 
 
 // 3) REDUCE-> JB HAME PURE ARR SE EK VALUE BNANI HO TB USE KREGE
 
-let err = [11,23,35,440,540];
+// let err = [11,23,35,440,540];
 
-let newerr = err.reduce(function(accumulator,val){
-          return accumulator+val
-},0)
-console.log(newerr);
+// let newerr = err.reduce(function(accumulator,val){
+//           return accumulator+val
+// },0)
+// console.log(newerr);
 
 // 4) FIND-> FIND PEHLI VALUE KO KREGA AGR ARR ME SAME 4 VALUE HE BUT WOH PEHLA HI KREGA
 
-let frr = [11,23,11,440,540];
+// let frr = [11,23,11,440,540];
 
-let newfrr = frr.find(function(val){
-   return val==20;
-})
-console.log(newfrr);
+// let newfrr = frr.find(function(val){
+//    return val==20;
+// })
+// console.log(newfrr);
 
 
 // 5) SOME AND EVERY = SOME-> AGR EK NE BHI COND TRUE KRDI TOH TRUE DEGA
 //  EVERY -> AGR EK NE BHI FALSE DIYA TOH FINAL FALSE
 
-let newsome = frr.some(function(val){
-    return  val < 20 
-})
+// let newsome = frr.some(function(val){
+//     return  val < 20 
+// })
 
-console.log(newsome);
+// console.log(newsome);
 
-let newevery = frr.every(function(val){
-    return  val < 20 
-})
+// let newevery = frr.every(function(val){
+//     return  val < 20 
+// })
 
-console.log(newevery);
+// console.log(newevery);
 
 
 // DESTRUCTING
@@ -104,6 +107,7 @@ let grr = [1,2,3,4,5];
 // let arr2 = [...grr];
 // console.log(arr2)
 
+
 // grr[2] = 10;
 // console.log(grr)
 // console.log(arr2);
@@ -111,9 +115,11 @@ let grr = [1,2,3,4,5];
 
  // QUESTIONSSS 
 
- let fruits = ['apple','banana', 'guava'];
- console.log(fruits[1]);
- fruits.push('mango');
- fruits.unshift('pineapple');
-console.log(fruits);
+//  let fruits = ['apple','banana', 'guava'];
+//  console.log(fruits[1]);
+//  fruits.push('mango');
+//  fruits.unshift('pineapple');
+// console.log(fruits);
+
+
 
