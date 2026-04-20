@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+    </div>
+    <script>
+        document.getElementById('demo1').innerText = 
+        `height: ${window.innerHeight} and width: ${window.innerWidth}`
+
+        document.getElementById('demo2').innerText = 
+        `height: ${screen.height} and width: ${screen.width}`
+    </script>
+</body>
+</html>
