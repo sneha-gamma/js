@@ -1,0 +1,70 @@
+React Lifecycle
+different stages a component goes through allowing code to run at 
+specific moments during its existence
+
+covers phases like creation,update and removal of a component
+
+three main phase of react component Lifecycle
+
+1) Mounting -> initializes , render and mounts the component(componentDidMount())
+2) Updating -> Handle state/prop changes, re-renders and updates(componentDidUpdat())
+3) Unmounting -> Cleans up before removal(componentWillUnmount())
+
+1) Mounting
+Process of creating and inserting a componnet into the DOM 
+for the first time in a react application
+during mounting, react initialize component, set up its internal state and insert into the dom
+
+Process of mounting 
+1) constructor -> execute before the component is mounted -> initializes the components state 
+and prepares it for rendering (in functional using useState())
+
+2) getDerivedStateFromProps(props,state) -> execute before every render -> used for updating the state based on proprs
+syncs component state with updated props before rendering -> return new state obj when prop change
+
+static getDerivedStateFromProps(props,state){
+    if(props.value != state.value){
+        return {value: props.value} // update state based on new props
+    }
+}
+
+3) render() -> responsible for rendering jsx and updating the dom
+executes during every render phase to update the Ui based on current state and prop
+
+4) componnetDidMount() -> this function is invoked right after the component
+is mounted on DOM -> runs once after the componnet is mounted to the dom
+
+Updating
+phase where component re-renders in response to chnages in state or props
+
+1) getDerivedStateFromProps() -> static method -> called before the render() method in both mounting and updating
+2) setState() -> not particularly a lifecycle function
+3) shouldComponentUpdate() -> if false-> render(), componentWillUpdate(), componentDidUpdate() does not get invoked
+4) getSnapshotBeforeUpdate(prevProps,prevState) -> invoked just before the dom is being render -> it is used to
+ store the previous values of state after DOM is updated
+
+5) componentDidUpdate(prevProps, prevState, snapshot) -> invoked after the component is rendered this function invoked once after render()
+function is executed after the updation of state or props
+
+Unmounting
+final phase of lifecycle of the component which is the phase of unmounting the components
+from the dom
+
+componentWillUnmount() -> this function gets invoked once before the component is removed from the page and
+this denotes the end of lifecycle
+
+once a component is unmounted it cannot be mounted again, a complete new 
+instance must be created if iti is needed later
+
+when does unmounting occur?
+1) Conditional rendering
+2) Routing changes
+3) Key change
+
+in class components -> uses lifecycle methods like 
+componentDidMount(), componentDidUpdate(), componentWillUnmount()
+while in functional we use useEffect()
+
+componentDidMount -> useEffect(fn,[]) - empty array
+componentDidUpdate -> useEffect(fn, [deps]) - array with dependencies
+componentWillUnmount -> useEffect(()=>{return fn;},[]) - return cleanup function

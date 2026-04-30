@@ -1,0 +1,44 @@
+
+ErrorBoundary
+ErrorBoundary are react components that catch javascript errors anywhere in their 
+child component tree, log those error and diplay a fallback Ui instead
+of component tree that crashed
+it work like a catch for the component
+
+Errorboundaries cannot be written as functional component, they must be 
+written in class component, specifically using getderivedStateFromError or componnetDidCatch
+
+static getDerivedStateFromError -> to render a fallback ui after an error has been throw
+componentDidCatch -> to log error information
+
+ErrorBoundary catch the error during the RENDERING, in lifecycle methods and in
+constructors of the whole tree below them
+
+Error boundaries do not catch errors for:
+1) Event handler
+2) Asynchronous code(e.g. setTimeout or requestAnimationFrame callbacks)
+3) Server side rendering
+4) Error thrown in the error boundary itself(rather than its children)
+
+Why does it not handle?
+they do not catch the following type of error due to how they are scheduled and executed
+`
+1) Event handlers -> errors in handlers like onclick or onchange occur after the rendering 
+process is complete we need to  use try/catch block.
+
+2) Async -> the fn inside settimeout or promise runs outside of react's syncs
+rendering call stack, by the time these error are thrown, the componnet has already
+finished rendering
+
+3) Errs in err boundary itself -> it act like a catch block which catch error from its children 
+not from its own logic.
+
+4) SSR -> Err boundary is specific to client side rendering
+
+Solution for uncaught error:
+1) Manual Rethrow -> manually throw the error using setState(()=>{throw error})
+2) IN react library we can use useErrorBoundary hook that simplifies the catching
+async and event handler errors.
+
+There is also a react library of errorBoundary (react-error-boundary) which is
+preferable over creating custom class component.

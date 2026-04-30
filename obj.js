@@ -38,8 +38,8 @@ let user = {
 // console.log(lat,lng);
 
 // when we want different name rather than obj
-let {lat: latitude, lng:longitude} = user.add.location;
-console.log(longitude,latitude)
+let {lat: latitude} = user.add.location;
+console.log(latitude)
 
 
 // const {name: myname} = user;
@@ -76,6 +76,11 @@ console.log(longitude,latitude)
 // PASS THE REF AND CHNGE IN CLONE ONE ALSO CHANGE THE ORIGINAL 
 // ONE BUT IT DOES NOT CHANGE THE WITHOUT NESTED PART LIKE NAME
 
+// 3 ways to do deep cloning
+// 1) structuredClone() -> can not clone functions, dom nodes, property descriptor(like getter/setter)
+// 2) json.parse(json.stringify()) -> discard function 
+// 3) using lodash -> import cloneDeep from 'lodash/cloneDeep' -> cloneDeep(original)
+
  // JSON.stringify(obj) -> convert obj into string
  // JSON.parse() -> convert string into obj
 
@@ -86,7 +91,7 @@ console.log(longitude,latitude)
 //   console.log(copyobj);
 
 
-  // OPTIONAL CHAINING -> KI AGR WOH ADAT HO TOH DEDO NA HO TOH ERROR MT DO
+  // OPTIONAL CHAINING -> KI AGR WOH DATA HO TOH DEDO NA HO TOH ERROR MT DO
 
 //   console.log(user?.add?.city);
 

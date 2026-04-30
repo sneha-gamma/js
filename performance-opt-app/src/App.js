@@ -7,6 +7,8 @@ import Header from './components/header';
 import withComponent from './components/withCounter';
 import Counter from './components/Counter';
 import withBorder from './components/withBorder';
+import { ErrorBoundary } from 'react-error-boundary';
+import ErrorFallback from './components/ErrorFallback';
 
 const EnhancedCounter = withComponent(Counter)
 const CounterWithBorder = withBorder(Counter)
@@ -39,8 +41,15 @@ function App() {
     <input type='text' value={name} 
     onChange={(e)=>setName(e.target.value)}/> */}
 
-    <EnhancedCounter/>
-    <CounterWithBorder/>
+    {/* <EnhancedCounter/>
+    <CounterWithBorder/> */}
+
+     <ErrorBoundary
+    FallbackComponent={ErrorFallback}
+    fallbackRender={ErrorFallback}
+     >
+      <CounterWithBorder/>
+     </ErrorBoundary>
 
     </div>
   );

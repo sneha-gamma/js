@@ -1,0 +1,122 @@
+
+Version Control System
+VCS is a tool used in software dev and collabrative project to track and manage the 
+changes to source code.
+
+version -> specific snapshot of our project files at a particular point in time 
+recorded through a commit
+
+Components in VCS
+1) repository -> central location that stores all project files along with their 
+complete change history
+ and metadata.
+
+2)Revision -> A specific saved version of a file or project
+
+3)Branch -> A separate copy of codebase used to develop feature or fix bugs 
+without affecting the main code
+
+4) Merging -> Combining changes from one branch to another
+5) Commit -> a snapshot of chnages made to codebase at specific time used to track and manage project history
+
+Types of VCS
+
+1) Local VCS
+store all project version on single system ans is mainly used by one user without
+remote collaboration(RCS-> revision, source-code cs)
+
+2) Centraliazed VCS (subversion,bazar, concurrent vs)
+all files and version history are stored in a single central server
+developers connect to this server to access or modify files
+
+3) Distributed version  cs (git, mercurial,bazar)
+allow each developer to have local repo along with a working copy of project
+dvcs uses two-step process(commit-push) to share changes with other dev
+
+
+Git 
+used to track changes in source code during software dev
+
+github
+github is a platform where git repositories cn be stored and shared, it is cloud based service
+require internet connection because it is hosted on web
+
+git 'origin' -> states to default name offered to remote repo from which local repo cloneHere is what happens in detail:
+
+.gitignore -> tells git which files and folder to ignore when tracking changes
+
+git push -> share local repo code to remote repo
+git pull -> updates current local branch with changes from a remote repo
+
+how to change last commit mesage 
+git commit --amend commit-hash
+
+git checkout, restore, stash, stahs pop, stash apply, git stash list, 
+
+git stash pop -> reapply the most recent stash nd remove it from stash
+git stash apply -> reapply the stash without removing it from stash
+
+how do we revert a commit that has already been pushed and made public
+switch to branch
+git log -> for geeting the commit hash
+git revert commit-hash
+
+git reset -> remove the changes from the commit history
+it can modify staged and working directory changes
+
+git revert -> create a new commit that undoes changes from previous commit without modifying commit history 
+
+types of repositories
+
+1) bare repository
+a repository without a working directory, typically used for 
+sharing projects remotely
+
+2) non-bare repo
+a repo that includes a working directory where developers can modify and track files
+
+How to rename branch locally
+git branch -m <new-name>
+git branch -m <old-name> <new-name>
+use -M if only changing capitalization
+
+How to rename branch remotely
+first chnage locally
+push the new branch(git push origin -u <new-name>)
+delete old branch(git push origin --delete <old-name>)
+
+Best practise for push
+1) pull the latest changes from develop into our branch
+2) then push
+
+How to uncommit the commit from local
+
+1) git reset --soft HEad~1 
+here soft means only remove the commit and files comes to stage level 
+and we provide the number of comiit with HEad
+
+2) git reset --hard HEad~1 
+here hard means remove the files 
+and we provide the number of comiit with HEad
+
+
+How to uncommit changes after push
+1) git log --oneline
+gives all commit with includes
+2)git revert hash-id
+it does not change the commit history only undoes the work and we can modify the commit also 
+
+How to delete a file after pushing into github
+
+1) delete from repo and local
+remove the file -> git rm <filename>
+commit the change -> git commit -m 'remove file from repo'
+push to remote -> git push origin main
+
+How to delete a branch
+
+git branch -d <branch-name> (check if you merged it)
+git branch -D <branch-name> (use this if the branch never merged)
+
+rebase command
+used to integrate changes from one branch into another

@@ -1,0 +1,13 @@
+
+Dependencies in package.json
+these are the packages that our app needs in production
+these packages are automatically installed when you are run npm install
+
+npm install <package_name>
+
+devDependencies
+these are the packages that are used in the project in its development phase and not
+in its production or testing environment
+
+npm install <package-name> --save-dev 
+

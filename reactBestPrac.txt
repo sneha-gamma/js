@@ -1,0 +1,27 @@
+
+1) Use functional components instead of class components
+2) Components Composition
+3) Avoid using inline styles
+4) Use arrow functions
+5) Use the lazy()and suspense() functions
+6) Optimize component rendering(react.memo, higher order component)
+7) Use typescript(react.fc<> -> for functional componnet and it is built in generic type)
+8) Use type declaration tools
+   if we are unable to use ts it is recommended to utilize tools or libraries for type checking
+   such as prop-types or alternative
+9) Use Eslint(static analysis)
+   it is a popular tool used in react application for ensuring  code quality,
+   consistency, and identifying potential errors or bugs
+10) Write test cases
+    a) Unit test (jest or mocha)
+    it is done to test individual component of react application involving the functionality of
+    each component in isolation
+
+    b) Integration test (cypress or selenium)
+    it is used to test how different components of the application work togther.
+
+    c) End-to End test (cypress or selenium)
+    it is used to test the entire application as a whole.this involves
+    testing the app from user perspective.
+    
+    d) Component test
