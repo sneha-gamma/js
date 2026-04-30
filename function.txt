@@ -1,0 +1,14 @@
+
+First Class Function In JS
+
+Why js is first-class citizens?
+They can be used just like any other value in language.
+means we can maipulate functions with the same flexibility as string, number or object
+
+A fn is considered first-class when the programming lanng allows it to be:
+1) Assigned to a variable
+2) Passed as an argument to another functions
+3) Returned from another Function
+4) Stored inside arrays or objects
+
+

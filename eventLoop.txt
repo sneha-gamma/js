@@ -1,0 +1,10 @@
+
+The event loop prioritizes tasks in following order:
+Synchronous code > Microtasks(Promises)-> Microtaskqueue > Macrotasks(setTimeout)->callback queue
+
+
+What is event loop?
+Since js is single thread is uses event loop to manages the execution of
+multiple task without blocking the main thread
+
+workiing of event loop
