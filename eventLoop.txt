@@ -8,3 +8,32 @@ Since js is single thread is uses event loop to manages the execution of
 multiple task without blocking the main thread
 
 workiing of event loop
+the event loop continously checks wheather the call stack is empty and whether there
+are pending tasks in the callback queue or microtask queue.
+
+1) call stack -> js has a call stack where function execution is managed in a lifo
+2) web api -> these include settimeout, setinterval, fetch, dom-events and
+                     other non-blocking operations
+3) callback queue / macroqueue / taskqueue
+   when async fn is completed its callback is pushed into the task queue
+4) microtask queue -> promises and other microtask are placed here
+   microtasks is fully executed before moving to the next Macrotasks
+5) event loop
+   it continously check the call stack and if empty move task from queue to stack for execution 
+
+Phases of event loop
+1) Timers phase -> executes callbacks from setTimeout and setinterval
+2) i/o callbacks phase -> handles i/o operations like file reading, network requests
+3) Prepare Phases -> internal phase used by node.js
+4) Poll Phases -> Retrieves new i/o events and executes callbacks
+5) Check Phases -> executes callbacks from setImmediate
+6) Close callbacks phase -> executes close event callbacks 
+7) Microtask execution -> after each phase the event loop processes the microtask
+  queue before moving to next phase
+
+Common issues related to event loop
+1) Blocking the main thread
+2) Delayed execution of setTimeout
+3) Priority of microtasks over callbacks
+5) callback hell
+
